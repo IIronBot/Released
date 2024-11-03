@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 
 const AudioPlayer = () => {
-  const audio = new Audio("http://localhost:5001/submit"); // Reference to the audio element
+  const audio = new Audio("https://released-3eef78e81e1c.herokuapp.com/submit"); // Reference to the audio element
   const [isPlaying, setIsPlaying] = useState(false); // State to track if the audio is playing
 
   const handlePlayPause = () => {
