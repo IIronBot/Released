@@ -14,7 +14,7 @@ def sendAudioFile():
     videourl = request.form.get("videoname")
     filename = getAudioFile(videourl)
     print(videourl)
-    return send_from_directory('.', {filename})
+    return send_from_directory('.', filename)
 
 # Example of a route with parameters
 @app.route('/download-song')
