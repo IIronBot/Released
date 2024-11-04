@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AudioPlayer from "./components/AudioPlayer";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -6,6 +6,9 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+  const getRequest = async () => {
+    fetch("http://127.0.0.1:5001").then((res) => console.log(res));
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -34,6 +37,7 @@ function App() {
           </button>
         </form>
         <AudioPlayer />
+        <button onClick={() => getRequest()}>click</button>
       </div>
     </>
   );

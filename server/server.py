@@ -6,9 +6,11 @@ from index import getAudioFile
 app = Flask(__name__)
 CORS(app)
 
+
 @app.route('/')
 def home():
-    return "Hello"
+    return "Hell World"
+
 @app.route('/submit', methods=['POST'])
 def sendAudioFile():
     videourl = request.form.get("videoname")
@@ -17,7 +19,7 @@ def sendAudioFile():
     return send_from_directory('.', filename)
 
 # Example of a route with parameters
-@app.route('/download-song')
+@app.route('/download-song', methods=["POST"])
 def download_song():
     return send_file('song.mp3', as_attachment=True, download_name='song.mp3')
 
