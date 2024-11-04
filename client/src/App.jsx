@@ -11,7 +11,7 @@ function App() {
     const data = new FormData(e.target);
     console.log("COOL");
     console.log(data);
-    fetch("https://released-3eef78e81e1c.herokuapp.com/", {
+    fetch("https://released-3eef78e81e1c.herokuapp.com/download-song", {
       method: "POST",
       body: data,
       mode: "cors",
