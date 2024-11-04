@@ -6,9 +6,11 @@ from index import getAudioFile
 app = Flask(__name__)
 CORS(app)
 
-
-@app.route('/submit', methods=['POST'])
+@app.route('/')
 def home():
+    return "Hello"
+@app.route('/submit', methods=['POST'])
+def sendAudioFile():
     videourl = request.form.get("videoname")
     filename = getAudioFile(videourl)
     print(videourl)
@@ -21,4 +23,4 @@ def download_song():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5001))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port, debug=False)
