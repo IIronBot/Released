@@ -5,21 +5,23 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [token, setToken] = useState();
   const getRequest = async () => {
-    fetch("http://127.0.0.1:5001").then((res) => console.log(res));
+    fetch("https://released-3eef78e81e1c.herokuapp.com", {
+      mode: "cors",
+    }).then((res) => console.log(res));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    console.log("COOL");
-    console.log(data);
     fetch("https://released-3eef78e81e1c.herokuapp.com/submit", {
       method: "POST",
       body: data,
       mode: "cors",
     }).then((res) => console.log(res));
   };
+
   return (
     <>
       <div className="flex items-center justify-center w-screen h-screen flex-col">
